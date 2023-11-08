@@ -8,15 +8,50 @@
     <title>Vue Methods test</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+<style>
+    .header{
+        text-align: center;
+    }
+    .bookshelf{
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    ul{
+        padding-left: 0!important;
+        width: 300px;
+    }
+    li{
+        list-style: none;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+    }
+    .favourite{
+        background-color: mediumpurple;
+    }
+</style>
 <body>
-
 <div id="app">
-    <div v-if="showBook">
-        <h1>Book name : {{title}}</h1>
-        <p>Author Name : {{author}}</p>
-        <p>Author Age : {{authorAge}}</p>
+    <h1 class="header">Vue 3 learning</h1>
+    <div v-if="showBook" class="bookshelf">
+        <ul v-for="book in filteredBooks">
+            <li :class="{favourite:book.isFavourite}" @click="book.isFavourite=!book.isFavourite">
+                <img :src="book.img" alt="" width="100" height="100">
+                <hr>
+                <h4>Book name : {{book.title}}</h4>
+                <p>Author Name : {{book.author}}</p>
+                <p>Author Age : {{book.authorAge}}</p>
+            </li>
+        </ul>
     </div>
-    <button v-on:click="showBook =! showBook">toggleBook</button>
+    <button v-on:click="showBook =! showBook">
+        <span v-if="showBook">hide book</span>
+        <span v-if="!showBook">show book</span>
+    </button>
+<!--    <a :href="link">google</a>-->
 </div>
 
 <script src="app.js"></script>
