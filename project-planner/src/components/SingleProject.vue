@@ -10,7 +10,7 @@
                 <div>
                     <i class="bi bi-trash me-2 text-danger fs-4" @click="deleteProject"></i>
                     <i class="bi bi-pencil-square text-warning me-2 fs-4"></i>
-                    <i class="bi bi-check-circle-fill text-success me-2 fs-4" @click="project.complete=!project.complete"></i>
+                    <i class="bi bi-check-circle-fill text-success me-2 fs-4" @click=completeProject></i>
                 </div>
             </div>
             <p v-if="showDetails">{{project.details}}</p>
@@ -33,6 +33,24 @@ export default {
             fetch(deleteRoute,{method : "DELETE"})
                 .then(()=>{
                     this.$emit("delete",this.project.id)
+                })
+                .catch((err)=>{console.log(err)})
+        },
+        completeProject() {
+            let updateCompleteRoute = this.api+"/"+this.project.id;
+            fetch(updateCompleteRoute, {
+                method : "PATCH",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify(
+                    {
+                        complete : !this.project.complete
+                    }
+                )
+            })
+                .then(()=>{
+                    this.$emit("complete",this.project.id);
                 })
                 .catch((err)=>{console.log(err)})
         }
