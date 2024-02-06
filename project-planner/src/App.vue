@@ -1,4 +1,5 @@
 <template>
+    <NavBar/>
     <router-view/>
 </template>
 
@@ -12,3 +13,6 @@
     margin: 0 auto;
 }
 </style>
+<script setup>
+import NavBar from "@/components/NavBar.vue";
+</script>
