@@ -3,17 +3,19 @@
         <div class="card-body bg-light">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h3 class="text-primary text-capitalize fw-bold" @click="showDetails=!showDetails">
+                    <h3 class="text-primary text-capitalize fw-bold mb-0" @click="showDetails=!showDetails">
                         {{project.title}}
                     </h3>
                 </div>
                 <div>
                     <i class="bi bi-trash me-2 text-danger fs-4" @click="deleteProject"></i>
-                    <i class="bi bi-pencil-square text-warning me-2 fs-4"></i>
+                    <router-link :to="{name : 'EditProject', params : {id:project.id}}">
+                        <i class="bi bi-pencil-square text-warning me-2 fs-4"></i>
+                    </router-link>
                     <i class="bi bi-check-circle-fill text-success me-2 fs-4" @click=completeProject></i>
                 </div>
             </div>
-            <p v-if="showDetails">{{project.details}}</p>
+            <p v-if="showDetails" class="mb-0">{{project.detail}}</p>
         </div>
     </div>
 </template>

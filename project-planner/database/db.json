@@ -2,26 +2,26 @@
   "projects": [
     {
       "id": "3",
-      "title": "project title 3",
-      "details": "project details 3",
-      "complete": true
+      "title": "project 3 title 3 asfasfas",
+      "detail": "project details aa asfasfas",
+      "complete": false
     },
     {
       "id": "4",
       "title": "project title 4",
-      "details": "project details 4",
+      "detail": "project details 4",
       "complete": false
     },
     {
       "id": "5",
       "title": "project title 5",
-      "details": "project details 5",
+      "detail": "project details 5",
       "complete": true
     },
     {
-      "id": "6",
-      "title": "project title 6",
-      "details": "project details 6",
+      "id": "6417",
+      "title": "hi",
+      "detail": "hello",
       "complete": false
     }
   ]

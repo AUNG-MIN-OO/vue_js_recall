@@ -12,6 +12,7 @@
 <style scoped>
     a{
         text-decoration: none;
+        color: #333 ;
     }
     a.router-link-active{
         background: #2c3e50;
