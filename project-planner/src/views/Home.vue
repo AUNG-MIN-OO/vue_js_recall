@@ -38,6 +38,7 @@ export default {
         }
     },
     computed: {
+        // project completed
         filteredProjects(){
             if (this.currentFilterValue==="ongoing"){
                 return this.projects.filter((project)=>{
