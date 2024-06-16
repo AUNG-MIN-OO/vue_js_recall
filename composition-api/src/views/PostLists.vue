@@ -1,6 +1,8 @@
 <template>
     <div v-for="post in posts">
-        <h1>{{post.title}}</h1>
+        <router-link :to="{name : 'details', params : {id:post.id}}">
+            <h1>{{post.title}}</h1>
+        </router-link>
         <h2>{{post.body}}</h2>
     </div>
 </template>

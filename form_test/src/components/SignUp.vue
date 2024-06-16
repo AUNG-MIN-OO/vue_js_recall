@@ -81,7 +81,7 @@ export default {
         },
         deleteSkill(skill){
             this.skills = this.skills.filter(loopedSkill=>{
-                return loopedSkill != skill;
+                return loopedSkill !== skill;
             })
         },
         submit(e){
